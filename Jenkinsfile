@@ -27,12 +27,12 @@ pipeline {
         }
         stage('build image') {
           steps {
-            sh 'docker build -t jogucha/devops-web-project:v1 --label devops-web-project-server .'
+            sh 'docker build -t miguvelo/devops-web-project:v1 --label devops-web-project-server .'
           }
         }
         stage('run container') {
           steps {
-            sh 'docker run -d --name devops-web-project-server --label devops-web-project-server -p 8081:8080 jogucha/devops-web-project:v1'
+            sh 'docker run -d --name devops-web-project-server --label devops-web-project-server -p 8081:8080 miguvelo/devops-web-project:v1'
           }
         }
     }
